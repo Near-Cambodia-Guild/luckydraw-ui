@@ -21,6 +21,11 @@ export const Play = () => {
     return () => clearTimeout(timer);
   };
 
+  function clearWinner() {
+    localStorage.setItem('winner', []);
+    window.location.reload();
+  }
+
   useMemo(() => {
     async function get() {
       setFetching(true);
@@ -43,7 +48,10 @@ export const Play = () => {
             null
           ) : (
             <div className="mx-2">
-              <p className="text-xl font-bold">Winner List🎉</p>
+              <div className="flex justify-between">
+                <p className="text-xl font-bold">Winner List🎉</p>
+                <button className="font-bold" onClick={clearWinner}>Clear Winner</button>
+              </div>
               <div className="grid md:grid-cols-4 bg-white rounded-md p-4 shadow-md">
                 <Card cards={winner} />
               </div>
