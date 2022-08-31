@@ -5,7 +5,7 @@ const SHEET_ID = process.env.REACT_APP_SHEET_ID;
 const CLIENT_EMAIL = process.env.REACT_APP_CLIENT_EMAIL;
 const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY.replace(/\\n/g, '\n');
 
-const getSheet = async() => {
+export const getSheet = async() => {
   // Initialize the sheet - doc ID is the long id in the sheets URL
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
 
@@ -24,5 +24,3 @@ const getSheet = async() => {
   // console.log(rows.map(i => i.LuckyDrawNumber));
   return rows;
 }
-
-module.exports = { getSheet }
