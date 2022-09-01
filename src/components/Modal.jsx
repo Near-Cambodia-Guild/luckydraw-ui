@@ -44,7 +44,8 @@ const Modal = ({number, setModal, setConfetti}) => {
               <img alt='' src={congrat} className='w-24' />
               <p className='text-2xl font-bold'>Congratulation</p>
               <p className='text-2xl font-bold'>to</p>
-              <img alt='' src={`https://api.telegram.org/file/bot${process.env.REACT_APP_BOT_TOKEN}/${filePath}`} className='w-24' />
+              {/* <img alt='' src={`https://api.telegram.org/file/bot${process.env.REACT_APP_BOT_TOKEN}/${filePath}`} className='w-24' /> */}
+              <img alt='' src={`https://api.telegram.org/file/bot${process.env.REACT_APP_BOT_TOKEN}/${number.file__path}`} className='h-80 rounded-3xl' />
               <p className='text-red-600 text-3xl font-bold'>{number.LuckyDrawNumber}</p>
               <p className='text-red-600 text-xl font-bold'>{number.Username}</p>
             </center>
